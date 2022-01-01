@@ -52,6 +52,13 @@
 .navbar-brand {
   font-size: 26px;
 }
+@font-face {
+  font-family: Cinzel-Regular;
+  src: url(../fonts/Cinzel-Regular.otf);
+}
+.navbar {
+  font-family: "Courier New", Courier, monospace;
+}
 /* *********************** */
 
 /* ********* TITLE ********* */
@@ -110,7 +117,6 @@
   height: auto;
   background-color: lightgrey;
 }
-
 .resume {
   width: 85%;
   margin-left: auto;
