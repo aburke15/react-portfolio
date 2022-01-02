@@ -16,8 +16,8 @@ const Bio = () => {
             alt="profile picture"
           />
         </div>
-        <div className="row">
-          <p>
+        <div className="row justify-content-center">
+          <p className="col-md-8">
             My interests in programming and development grew out of my love for
             technology. For several years now I've been an actively involved
             tech enthusiast. My obsession started with smartphones. My very
