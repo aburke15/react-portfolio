@@ -2,7 +2,7 @@ import React from "react";
 
 const Title = () => {
   return (
-    <div id="#" className="title-section parallax">
+    <div id="title" className="title-section parallax">
       <div className="container">
         <div className="row text-center">
           <h1 className="title title-color-font">Andre Burke</h1>

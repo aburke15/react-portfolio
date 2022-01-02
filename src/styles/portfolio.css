@@ -46,18 +46,17 @@
 }
 
 /* ****** NAVBAR ********* */
-.navbar {
-  border: 1px solid white;
-}
-.navbar-brand {
+/* .navbar-brand {
   font-size: 26px;
 }
 @font-face {
   font-family: Cinzel-Regular;
   src: url(../fonts/Cinzel-Regular.otf);
-}
+} */
 .navbar {
   font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+  font-size: 18px;
 }
 /* *********************** */
 
