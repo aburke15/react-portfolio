@@ -6,7 +6,13 @@ const Navbar = () => {
     <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src={src} alt="navbar icon" width={30} height={25} />
+          <img
+            className="nav-img"
+            src={src}
+            alt="navbar icon"
+            width={30}
+            height={25}
+          />
         </a>
         <button
           className="navbar-toggler"
