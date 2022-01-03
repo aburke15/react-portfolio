@@ -34,7 +34,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#about">
-                <i className="bi bi-person"></i> About
+                <i className="bi bi-file-person"></i> About
               </a>
             </li>
             <li className="nav-item">
@@ -50,6 +50,11 @@ const Navbar = () => {
             <li className="nav-item">
               <a className="nav-link" href="#projects">
                 <i className="bi bi-kanban"></i> Projects
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#contact">
+                <i className="bi bi-telephone-inbound"></i> Contact
               </a>
             </li>
           </ul>
