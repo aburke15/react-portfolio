@@ -152,6 +152,7 @@
 }
 .contact-email {
   color: white;
+  text-decoration: none;
 }
 .contact-phone {
   color: white;
