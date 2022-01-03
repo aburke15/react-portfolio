@@ -69,7 +69,7 @@ const Projects = () => {
           <h2>Projects</h2>
           <p className="b-underline"></p>
         </div>
-        <div className="row">
+        <div className="row global-margin">
           <DataTable responsive columns={columns} data={projects} />
         </div>
       </div>
