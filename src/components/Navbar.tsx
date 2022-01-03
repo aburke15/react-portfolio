@@ -42,6 +42,16 @@ const Navbar = () => {
                 <i className="bi bi-tools"></i> Skills
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#resume">
+                <i className="bi bi-file-earmark-pdf"></i> Resume
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#projects">
+                <i className="bi bi-kanban"></i> Projects
+              </a>
+            </li>
           </ul>
         </div>
       </div>
