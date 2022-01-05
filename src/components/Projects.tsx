@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
+import { githubToken, githubUser } from "../env";
+import loading from "../images/loading.gif";
 
 interface GithubProject {
   name: string;
-  createdAt: string;
+  created_at: string;
   description: string;
-  htmlUrl: string;
+  html_url: any;
   language: string;
 }
 
@@ -22,6 +24,26 @@ const columns = [
     wrap: true,
   },
   {
+    name: "Project Link",
+    selector: (row: GithubProject) => row.html_url,
+    sortable: false,
+    cell: (row: GithubProject) => (
+      <a
+        className="btn btn-secondary"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={row.html_url}
+      >
+        Go to project
+      </a>
+    ),
+  },
+  {
+    name: "Created At",
+    selector: (row: GithubProject) => row.created_at,
+    sortable: true,
+  },
+  {
     name: "Language",
     selector: (row: GithubProject) => row.language,
     sortable: true,
@@ -29,36 +51,29 @@ const columns = [
   },
 ];
 
-const projects: GithubProject[] = [];
-
-const setProjects = (data: any[]) => {
-  data.forEach((item) => {
-    const project: GithubProject = {
-      name: item.name,
-      createdAt: item.created_at,
-      description: item.description,
-      htmlUrl: item.html_url,
-      language: item.language,
-    };
-    projects.push(project);
-  });
-};
-
 const Projects = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://api.github.com/users/aburke15/repos")
-      .then((response) => response.json())
+    const url = `https://api.github.com/users/${githubUser}/repos`;
+    fetch(url, {
+      method: "GET",
+      headers: {
+        Authorization: `token ${githubToken}`,
+      },
+    })
+      .then((res) => res.json())
       .then((data) => {
-        setProjects(data);
-        setIsLoading(false);
+        setTimeout(() => {
+          setProjects(data);
+          setIsLoading(false);
+        }, 2000);
       })
       .catch((error) => {
-        setIsLoading(false);
         console.log(error);
+        setIsLoading(false);
       });
   }, []);
 
@@ -69,8 +84,14 @@ const Projects = () => {
           <h2>Projects</h2>
           <p className="b-underline"></p>
         </div>
-        <div className="row">
-          <DataTable responsive columns={columns} data={projects} />
+        <div className="row global-margin">
+          {isLoading ? (
+            <div className="text-center justify-content-center">
+              <img src={loading} alt="loading" height={75} width={75} />
+            </div>
+          ) : (
+            <DataTable responsive columns={columns} data={projects} />
+          )}
         </div>
       </div>
     </div>
