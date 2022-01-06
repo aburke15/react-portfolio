@@ -67,6 +67,7 @@ const Projects = () => {
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
+          // add table pages next
           setProjects(data);
           setIsLoading(false);
         }, 1000);
