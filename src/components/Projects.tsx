@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import { githubToken, githubUser } from "../env";
-import loading from "../images/loading.gif";
+import Loading from "./Loading";
 
 interface GithubProject {
   name: string;
@@ -86,9 +86,7 @@ const Projects = () => {
         </div>
         <div className="row global-margin">
           {isLoading ? (
-            <div className="text-center justify-content-center">
-              <img src={loading} alt="loading" height={75} width={75} />
-            </div>
+            <Loading />
           ) : (
             <DataTable responsive columns={columns} data={projects} />
           )}
