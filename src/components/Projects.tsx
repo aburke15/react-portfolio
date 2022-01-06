@@ -57,7 +57,7 @@ const Projects = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    const url = "https://api.github.com/user/repos";
+    const url = "https://api.github.com/user/repos?per_page=100";
     fetch(url, {
       method: "GET",
       headers: {
