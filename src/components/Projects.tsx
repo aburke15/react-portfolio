@@ -57,7 +57,7 @@ const Projects = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    const url = `https://api.github.com/users/${githubUser}/repos`;
+    const url = "https://api.github.com/user/repos";
     fetch(url, {
       method: "GET",
       headers: {
@@ -69,7 +69,7 @@ const Projects = () => {
         setTimeout(() => {
           setProjects(data);
           setIsLoading(false);
-        }, 2000);
+        }, 1000);
       })
       .catch((error) => {
         console.log(error);
