@@ -139,6 +139,9 @@
 .projects-margin {
   margin-bottom: 20px;
 }
+.table-scroll {
+  overflow-y: auto;
+}
 /* ********************************** */
 
 /* ************* CONTACT ************ */

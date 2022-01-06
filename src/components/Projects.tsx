@@ -57,7 +57,7 @@ const Projects = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    const url = "https://api.github.com/user/repos";
+    const url = "https://api.github.com/user/repos?per_page=100";
     fetch(url, {
       method: "GET",
       headers: {
@@ -67,6 +67,7 @@ const Projects = () => {
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
+          // add table pages next
           setProjects(data);
           setIsLoading(false);
         }, 1000);
