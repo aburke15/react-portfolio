@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
-import { githubToken, githubUser } from "../env";
+import { githubToken } from "../env";
 import Loading from "./Loading";
-
-interface GithubProject {
-  name: string;
-  created_at: string;
-  description: string;
-  html_url: any;
-  language: string;
-}
+import GithubProject from "../shared/GithubProject";
 
 const columns = [
   {
