@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import "./styles/App.css";
 import "./styles/portfolio.css";
 import Navbar from "./components/Navbar";
@@ -9,7 +9,7 @@ import Resume from "./components/Resume";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
-function App() {
+const App: FunctionComponent = () => {
   return (
     <div className="portfolio-font">
       <Navbar />
@@ -21,6 +21,6 @@ function App() {
       <Contact />
     </div>
   );
-}
+};
 
 export default App;

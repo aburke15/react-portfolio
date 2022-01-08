@@ -63,7 +63,7 @@ const Projects: FunctionComponent = () => {
           // add table pages
           setProjects(data);
           setIsLoading(false);
-        }, 1000);
+        }, 500);
       })
       .catch((error) => {
         console.log(error);
