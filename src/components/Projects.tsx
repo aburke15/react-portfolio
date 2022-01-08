@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FunctionComponent } from "react";
 import DataTable from "react-data-table-component";
 import { githubToken } from "../env";
 import Loading from "./Loading";
@@ -44,7 +44,7 @@ const columns = [
   },
 ];
 
-const Projects = () => {
+const Projects: FunctionComponent = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [projects, setProjects] = useState([]);
 

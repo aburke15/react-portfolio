@@ -1,7 +1,6 @@
-import React from "react";
-// import resume from "../images/BurkeAndre.pdf";
+import React, { FunctionComponent } from "react";
 
-const Resume = () => {
+const Resume: FunctionComponent = () => {
   return (
     <div id="resume" className="resume-section global-padding">
       <div className="container text-center">

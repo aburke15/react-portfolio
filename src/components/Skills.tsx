@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import csharp from "../images/csharp.png";
 import netCore from "../images/aspnetcore.png";
 import efCore from "../images/ef_core.png";
@@ -9,7 +9,7 @@ import js from "../images/js.png";
 import css from "../images/css.png";
 import html from "../images/html.png";
 
-const Skills = () => {
+const Skills: FunctionComponent = () => {
   return (
     <div id="skills" className="skills-section global-padding">
       <div className="container text-center">

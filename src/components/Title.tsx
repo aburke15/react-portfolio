@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-const Title = () => {
+const Title: FunctionComponent = () => {
   return (
     <div id="title" className="title-section parallax">
       <div className="container">
