@@ -18,21 +18,15 @@ const Bio: FunctionComponent = () => {
         </div>
         <div className="row justify-content-center">
           <p className="col-md-8">
-            My interests in programming and development grew out of my love for
-            technology. For several years now I've been an actively involved
-            tech enthusiast. My obsession started with smartphones. My very
-            first smartphone was the iPhone 3GS, it was my first step into the
-            newly arisen smartphone revolution. Currently, I am interested in
-            both Android and Apple devices and will interchange between
-            platforms. Not long after that, I began to develop love for all
-            sorts of technology and gadgets. After some time I decided that
-            using and admiring tech wasn't enough for me so I turned to
-            something even better, programming. It became obvious to me that I
-            wanted to develop software for the devices I was so invested in and
-            more. My first programming language was C#, as I was learning to
-            develop in C# it felt like a whole new world of possibilities and
-            that is what I absolutely love about programming, you can do most
-            anything with it.
+            I am a die hard tech enthusiast with a passion for learning. I have
+            worked in the tech industry for over 5 years and have a solid
+            background in software development. Although I have experience in
+            both front and back end development, I am currently specialized in
+            back end development. My goal is to build top quality software that
+            is easy to use and easy to maintain. I hope to accomplish this by
+            keeping up with tested architecture/development practices and the
+            latest technologies. Please visit my links below to see my work and
+            social profiles. I would love to connect with you!
           </p>
         </div>
       </div>
