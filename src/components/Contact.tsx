@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import linkedIn from "../images/linkedin.png";
 import github from "../images/github.png";
 import youtube from "../images/youtube.png";
 
-const Contact = () => {
+const Contact: FunctionComponent = () => {
   return (
     <div id="contact" className="contact-section global-padding">
       <div className="container text-center">

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import src from "../images/me.png";
 
-const Bio = () => {
+const Bio: FunctionComponent = () => {
   return (
     <div id="about" className="bio-section global-padding">
       <div className="container text-center">
