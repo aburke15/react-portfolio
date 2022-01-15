@@ -33,8 +33,9 @@ const columns = [
   },
   {
     name: "Created At",
-    selector: (row: GithubProject) => row.created_at,
-    sortable: true,
+    selector: (row: GithubProject) =>
+      new Date(row.created_at).toLocaleDateString(),
+    sortable: false,
   },
   {
     name: "Language",
@@ -50,7 +51,8 @@ const Projects: FunctionComponent = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    const url = "https://api.github.com/user/repos?per_page=100";
+    const url =
+      "https://api.github.com/user/repos?per_page=100&affiliation=owner&sort=created&direction=desc";
     fetch(url, {
       method: "GET",
       headers: {
