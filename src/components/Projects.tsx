@@ -18,14 +18,14 @@ const columns = [
   },
   {
     name: "Project Link",
-    selector: (row: GithubProject) => row.html_url,
+    selector: (row: GithubProject) => row.htmlUrl,
     sortable: false,
     cell: (row: GithubProject) => (
       <a
         className="btn btn-secondary"
         target="_blank"
         rel="noopener noreferrer"
-        href={row.html_url}
+        href={row.htmlUrl}
       >
         Go to project
       </a>
@@ -34,7 +34,7 @@ const columns = [
   {
     name: "Created At",
     selector: (row: GithubProject) =>
-      new Date(row.created_at).toLocaleDateString(),
+      new Date(row.createdAt).toLocaleDateString(),
     sortable: false,
   },
   {
@@ -45,31 +45,33 @@ const columns = [
   },
 ];
 
+interface ILocalState {
+  projects: Array<GithubProject>;
+  isLoading: boolean;
+}
+
+const defaultState: ILocalState = {
+  projects: [],
+  isLoading: false,
+};
+
 const Projects: FunctionComponent = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [projects, setProjects] = useState([]);
+  const [localState, setLocalState] = useState(defaultState);
 
   useEffect(() => {
-    setIsLoading(true);
-    const url =
-      "https://api.github.com/user/repos?per_page=100&affiliation=owner&sort=created&direction=desc";
-    fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: `token ${githubToken}`,
-      },
-    })
+    setLocalState({ ...localState, isLoading: true });
+    const url = "https://portfolio-be.azurewebsites.net/api/GitHub/repos";
+    fetch(url, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
           // add table pages
-          setProjects(data);
-          setIsLoading(false);
+          setLocalState({ ...localState, projects: data, isLoading: false });
         }, 500);
       })
       .catch((error) => {
         console.log(error);
-        setIsLoading(false);
+        setLocalState({ ...localState, isLoading: false });
       });
   }, []);
 
@@ -81,10 +83,14 @@ const Projects: FunctionComponent = () => {
           <p className="b-underline"></p>
         </div>
         <div className="row global-margin">
-          {isLoading ? (
+          {localState.isLoading ? (
             <Loading />
           ) : (
-            <DataTable responsive columns={columns} data={projects} />
+            <DataTable
+              responsive
+              columns={columns}
+              data={localState.projects}
+            />
           )}
         </div>
       </div>

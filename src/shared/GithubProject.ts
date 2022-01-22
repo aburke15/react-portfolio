@@ -1,7 +1,7 @@
 export default interface GithubProject {
   name: string;
-  created_at: string;
+  createdAt: string;
   description: string;
-  html_url: string;
+  htmlUrl: string;
   language: string;
 }
