@@ -8,9 +8,9 @@ const setProjects = (data: any[]): void => {
   data.forEach((project: any) => {
     projects.push({
       name: project.name,
-      created_at: project.created_at,
+      createdAt: project.created_at,
       description: project.description,
-      html_url: project.html_url,
+      htmlUrl: project.html_url,
       language: project.language,
     } as GithubProject);
   });
