@@ -13,7 +13,7 @@ const Bio: FunctionComponent = () => {
           <img
             className="img-responsive bio-pic"
             src={src}
-            alt="profile picture"
+            alt={"this is Andre Burke"}
           />
         </div>
         <div className="row justify-content-center">

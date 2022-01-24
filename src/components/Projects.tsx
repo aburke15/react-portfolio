@@ -1,6 +1,5 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
 import DataTable from "react-data-table-component";
-import { githubToken } from "../env";
 import Loading from "./Loading";
 import GithubProject from "../shared/GithubProject";
 
@@ -59,19 +58,19 @@ const Projects: FunctionComponent = () => {
   const [localState, setLocalState] = useState(defaultState);
 
   useEffect(() => {
-    setLocalState({ ...localState, isLoading: true });
+    setLocalState((s) => ({ ...s, isLoading: true }));
     const url = "https://portfolio-be.azurewebsites.net/api/GitHub/repos";
     fetch(url, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
         setTimeout(() => {
           // add table pages
-          setLocalState({ ...localState, projects: data, isLoading: false });
+          setLocalState((s) => ({ ...s, projects: data, isLoading: false }));
         }, 500);
       })
       .catch((error) => {
         console.log(error);
-        setLocalState({ ...localState, isLoading: false });
+        setLocalState((s) => ({ ...s, isLoading: false }));
       });
   }, []);
 

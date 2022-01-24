@@ -14,6 +14,7 @@ const Resume: FunctionComponent = () => {
             style={{ height: "90vh" }}
             type="application/pdf"
             data="/BurkeAndre.pdf"
+            aria-label="resume pdf"
           />
         </div>
       </div>
