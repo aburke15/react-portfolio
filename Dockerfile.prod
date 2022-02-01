@@ -1,0 +1,13 @@
+# pull the official base image
+FROM node:17-alpine3.14 AS build-stage
+WORKDIR /app
+COPY package*.json tsconfig.json ./
+RUN npm i
+COPY . .
+RUN npm run build
+
+# run as non root user
+FROM nginx:1.21.6-alpine
+COPY --from=build-stage /app/build /usr/share/nginx/html
+EXPOSE 80
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
